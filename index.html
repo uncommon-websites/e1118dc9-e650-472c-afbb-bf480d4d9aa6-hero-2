@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urano Draconis — AI Drug Discovery Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gray: {
+                            900: '#111111',
+                            800: '#222222',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white selection:bg-gray-200">
+
+    <!-- Header / Navigation -->
+    <header class="absolute top-0 left-0 w-full px-6 md:px-10 py-6 grid grid-cols-2 lg:grid-cols-3 items-center z-50 animate-fade-in delay-0">
+        <!-- Logo -->
+        <div class="flex justify-start">
+            <a href="#" class="text-[22px] font-medium tracking-tight flex items-start">
+                Urano Draconis<span class="text-[10px] leading-none mt-1 ml-[1px]">™</span>
+            </a>
+        </div>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden lg:flex justify-center items-center gap-8 text-[15px]">
+            <button class="flex items-center gap-1.5 hover:opacity-60 transition-opacity">
+                Products
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[2px] opacity-50">
+                    <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="flex items-center gap-1.5 hover:opacity-60 transition-opacity">
+                Capabilities
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[2px] opacity-50">
+                    <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="flex items-center gap-1.5 hover:opacity-60 transition-opacity">
+                Solutions
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[2px] opacity-50">
+                    <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="flex items-center gap-1.5 hover:opacity-60 transition-opacity">
+                Resources
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[2px] opacity-50">
+                    <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="flex items-center gap-1.5 hover:opacity-60 transition-opacity">
+                Customer stories
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[2px] opacity-50">
+                    <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a href="#" class="hover:opacity-60 transition-opacity">Pricing</a>
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="hidden lg:flex justify-end items-center gap-7 text-[15px]">
+            <a href="#" class="hover:opacity-60 transition-opacity">Mission</a>
+            <a href="#" class="hover:opacity-60 transition-opacity">Careers</a>
+            <a href="#" class="bg-black text-white px-5 py-2.5 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200 active:scale-95 transform">Start Free Pilot</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full h-[900px] max-h-screen overflow-hidden bg-[#e8e6e1]">
+            
+            <!-- Background Image -->
+            <img 
+                src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/e1118dc9-e650-472c-afbb-bf480d4d9aa6/hero-2-img-0-1774295364379.png" 
+                alt="Dashboard interface showing molecular structures and AI-generated drug compounds with validation scores and therapeutic area classifications" 
+                class="absolute inset-0 w-full h-full object-cover z-0 animate-scale-in delay-0"
+            />
+
+            <!-- Hero Content -->
+            <div class="relative z-10 w-full h-full flex flex-col items-center pt-[140px] px-6">
+                
+                <!-- Headline -->
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-[104px] leading-[0.9] tracking-[-0.02em] text-black text-center w-full mx-auto animate-fade-in-up delay-100">AI Platform Discovers Novel Drug Molecules for Biotech</h1>
+
+                <!-- Floating CTA Button -->
+                <a href="#" class="absolute bottom-[120px] bg-white text-black px-8 py-4 rounded-full text-[16px] font-medium shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:scale-105 transition-all duration-300 animate-fade-in-up delay-300">
+                    Book an intro
+                </a>
+            </div>
+        </section>
+
+        <!-- Logo Strip Section -->
+        <section class="bg-white py-10 px-6 md:px-10 border-b border-gray-100 relative z-20 animate-fade-in delay-400">
+            <div class="max-w-[1400px] mx-auto flex justify-center md:justify-between items-center gap-10 md:gap-8 flex-wrap">
+                <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/e1118dc9-e650-472c-afbb-bf480d4d9aa6/hero-2-img-1-1774295364411.png" alt="Strava logo" class="h-5 md:h-6 w-auto object-contain opacity-90" />
+                <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/e1118dc9-e650-472c-afbb-bf480d4d9aa6/hero-2-img-2-1774295364404.png" alt="piab logo" class="h-7 md:h-8 w-auto object-contain opacity-90" />
+                <img src="https://placehold.co/140x30/ffffff/000000?text=Robinhood" alt="Robinhood logo" class="h-6 md:h-7 w-auto object-contain opacity-90" />
+                <img src="https://placehold.co/100x30/ffffff/000000?text=swile" alt="swile logo" class="h-5 md:h-6 w-auto object-contain opacity-90" />
+                <img src="https://placehold.co/120x30/ffffff/000000?text=Polestar" alt="Polestar logo" class="h-5 md:h-6 w-auto object-contain opacity-90" />
+                <img src="https://placehold.co/140x40/ffffff/000000?text=Electrolux+Group" alt="Electrolux Group logo" class="h-7 md:h-8 w-auto object-contain opacity-90" />
+                <img src="https://placehold.co/100x35/ffffff/000000?text=Brex" alt="Brex logo" class="h-6 md:h-7 w-auto object-contain opacity-90" />
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
